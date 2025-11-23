@@ -1,4 +1,6 @@
-﻿#include <algorithm>
+#pragma once
+
+#include <algorithm>
 #include <cassert>
 #include <cstddef>
 #include <initializer_list>
@@ -224,6 +226,11 @@ void swap(SingleLinkedList<Type>& lhs, SingleLinkedList<Type>& rhs) noexcept {
 template <typename Type>
 bool operator==(const SingleLinkedList<Type>& lhs, const SingleLinkedList<Type>& rhs) {
     return std::equal(lhs.begin(), lhs.end(), rhs.begin(), rhs.end());
+}
+
+template <typename Type>
+bool operator!=(const SingleLinkedList<Type>& lhs, const SingleLinkedList<Type>& rhs) {
+    return !(lhs == rhs);
 }
 
 template <typename Type>
